@@ -8,11 +8,23 @@ Minimal RSS Reader, [k8s](https://kubernetes.io/) ready, combine [RSS Hub](https
 
 - [RSS Reader](#rss-reader)
   - [Table of Contents](#table-of-contents)
+  - [credentials](#credentials)
+  - [example](#example)
   - [docker compose](#docker-compose)
   - [k8s native artifacts](#k8s-native-artifacts)
     - [manually parts](#manually-parts)
   - [helm artifacts](#helm-artifacts)
   - [dns utils](#dns-utils)
+
+## credentials
+
+**WARNING: not secure**
+
+default username/password is `admin`/`123456`
+
+## example
+
+an [example feeds list](./example/feeds.opml) provided for you
 
 ## docker compose
 

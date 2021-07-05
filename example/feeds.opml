@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <opml version="2.0">
+        <body>
+            <outline text="All">
+                <outline title="财联社 - 金融" text="财联社 - 金融" xmlUrl="http://rsshub:1200/cls/depth/1032" htmlUrl="https://www.cls.cn/telegraph"></outline>
+            </outline>
+            <outline text="公告">
+                <outline title="中国地震局震情速递" text="中国地震局震情速递" xmlUrl="http://rsshub:1200/earthquake" htmlUrl="https://www.cea.gov.cn/cea/xwzx/zqsd/index.html"></outline>
+            </outline>
+            <outline text="图片">
+                <outline title="Bing每日壁纸" text="Bing每日壁纸" xmlUrl="http://rsshub:1200/bing" htmlUrl="https://cn.bing.com/"></outline>
+            </outline>
+            <outline text="微博">
+                <outline title="HiiroVTuber 的 bilibili 动态" text="HiiroVTuber 的 bilibili 动态" xmlUrl="http://rsshub:1200/bilibili/user/dynamic/508963009" htmlUrl="https://space.bilibili.com/508963009/dynamic"></outline>
+            </outline>
+            <outline text="技术">
+                <outline title="V2EX-最新主题" text="V2EX-最新主题" xmlUrl="http://rsshub:1200/v2ex/topics/latest" htmlUrl="https://www.v2ex.com/"></outline>
+                <outline title="InfoQ推荐" text="InfoQ推荐" xmlUrl="http://rsshub:1200/infoq/recommend" htmlUrl="https://www.infoq.cn"></outline>
+                <outline title="看雪论坛最新主题" text="看雪论坛最新主题" xmlUrl="http://rsshub:1200/pediy/topic" htmlUrl="https://bbs.pediy.com/new-tid.htm"></outline>
+            </outline>
+            <outline text="新闻">
+                <outline title="36氪资讯" text="36氪资讯" xmlUrl="http://rsshub:1200/36kr/news/latest" htmlUrl="https://36kr.com/information/web_news/latest"></outline>
+                <outline title="iFanr - AppSolution：智能手机更好用的秘密" text="iFanr - AppSolution：智能手机更好用的秘密" xmlUrl="http://rsshub:1200/ifanr/app" htmlUrl="https://www.ifanr.com/app"></outline>
+                <outline title="IT 之家 - IT 资讯" text="IT 之家 - IT 资讯" xmlUrl="http://rsshub:1200/ithome/it" htmlUrl="https://it.ithome.com/"></outline>
+                <outline title="新浪财经－国內" text="新浪财经－国內" xmlUrl="http://rsshub:1200/sina/finance" htmlUrl="http://finance.sina.com.cn/china/"></outline>
+                <outline title="极客公园 - 资讯" text="极客公园 - 资讯" xmlUrl="http://rsshub:1200/geekpark/breakingnews" htmlUrl="https://www.geekpark.net"></outline>
+                <outline title="虎嗅网 - 首页资讯" text="虎嗅网 - 首页资讯" xmlUrl="http://rsshub:1200/huxiu/article" htmlUrl="https://www.huxiu.com/article"></outline>
+                <outline title="财联社 - 电报" text="财联社 - 电报" xmlUrl="http://rsshub:1200/cls/telegraph" htmlUrl="https://www.cls.cn/telegraph"></outline>
+            </outline>
+            <outline text="游戏">
+                <outline title="3DM - 新闻中心" text="3DM - 新闻中心" xmlUrl="http://rsshub:1200/3dm/news" htmlUrl="http://www.3dmgame.com/news/"></outline>
+                <outline title="文章 | 机核 GCORES" text="文章 | 机核 GCORES" xmlUrl="http://rsshub:1200/gcores/category/articles" htmlUrl="https://www.gcores.com/articles"></outline>
+                <outline title="游民星空-今日推荐" text="游民星空-今日推荐" xmlUrl="http://rsshub:1200/gamersky/news" htmlUrl="https://www.gamersky.com/news/"></outline>
+                <outline title="资讯 | 机核 GCORES" text="资讯 | 机核 GCORES" xmlUrl="http://rsshub:1200/gcores/category/news" htmlUrl="https://www.gcores.com/news"></outline>
+            </outline>
+            <outline text="阅读">
+                <outline title="新浪专栏-创事记" text="新浪专栏-创事记" xmlUrl="http://rsshub:1200/sina/csj" htmlUrl="https://tech.sina.com.cn/chuangshiji"></outline>
+                <outline title="果壳网 科学人" text="果壳网 科学人" xmlUrl="http://rsshub:1200/guokr/scientific" htmlUrl="https://www.guokr.com/scientific"></outline>
+                <outline title="知乎日报" text="知乎日报" xmlUrl="http://rsshub:1200/zhihu/daily" htmlUrl="https://daily.zhihu.com"></outline>
+                <outline title="知道日报" text="知道日报" xmlUrl="http://rsshub:1200/baidu/daily" htmlUrl="https://zhidao.baidu.com/daily?fr=daohang"></outline>
+                <outline title="观察者-首页新闻" text="观察者-首页新闻" xmlUrl="http://rsshub:1200/guanchazhe/index/all" htmlUrl="https://www.guancha.cn"></outline>
+            </outline>
+        </body>
+    </opml>
