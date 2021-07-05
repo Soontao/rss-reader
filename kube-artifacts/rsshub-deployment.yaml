@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out kube-artifacts/
+    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out ./kube-artifacts
     kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
   labels:
@@ -18,7 +18,7 @@ spec:
     metadata:
       annotations:
         kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out
-          kube-artifacts/
+          ./kube-artifacts
         kompose.version: 1.21.0 (992df58d8)
       creationTimestamp: null
       labels:

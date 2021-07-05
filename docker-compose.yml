@@ -13,6 +13,7 @@ services:
         limits:
           memory: 300M
           
+          
   miniflux:
     image: thedockerimages/miniflux:latest
     restart: always
