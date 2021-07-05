@@ -1,8 +1,31 @@
 # RSS Reader
 
-Minimal RSS Reader
+Minimal RSS Reader, k8s readyd
 
-## K8s native artifacts
+## Table of Contents
+
+- [RSS Reader](#rss-reader)
+  - [Table of Contents](#table-of-contents)
+  - [docker-compose](#docker-compose)
+  - [k8s native artifacts](#k8s-native-artifacts)
+  - [helm artifacts](#helm-artifacts)
+  - [DNS Utils](#dns-utils)
+
+## docker-compose
+
+deploy
+
+```bash
+docker-compose up -d
+```
+
+un-deploy
+
+```bash
+docker-compose down
+```
+
+## k8s native artifacts
 
 build
 
@@ -16,7 +39,13 @@ deploy
 kubectl apply -f ./kube-artifacts
 ```
 
-## Helm artifacts
+undeploy
+
+```bash
+kubectl delete -f ./kube-artifacts
+```
+
+## helm artifacts
 
 ```bash
 kompose convert -c --out ./helm-charts
