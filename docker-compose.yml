@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  rsshub:
+    image: theosun/rsshub:latest
+    restart: always
+    environment:
+      NODE_ENV: "production"
+      LOGGER_LEVEL: "warn"
+      PRE_FETCH: "false"
+    deploy:
+      resources:
+        limits:
+          memory: 300M
+          
+  miniflux:
+    image: thedockerimages/miniflux:latest
+    restart: always
+    ports:
+      - "43241:8080"
+    depends_on:
+      - pg
+      - rsshub
+    environment:
+      DATABASE_URL: postgres://miniflux:secret@pg/miniflux?sslmode=disable
+      RUN_MIGRATIONS: 1
+      CREATE_ADMIN: 1
+      ADMIN_USERNAME: "admin"
+      ADMIN_PASSWORD: "123456"
+      POLLING_FREQUENCY: 10
+      HTTP_CLIENT_TIMEOUT: 60
+      CLEANUP_ARCHIVE_READ_DAYS: 15
+      CLEANUP_ARCHIVE_UNREAD_DAYS: 30
+  
+  pg:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "miniflux"
+      POSTGRES_PASSWORD: "secret"
+
+volumes:
+    miniflux-db:

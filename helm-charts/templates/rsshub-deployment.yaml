@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert -c --out
+      ./helm-charts
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: rsshub
+  name: rsshub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: rsshub
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert -c
+          --out ./helm-charts
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: rsshub
+    spec:
+      containers:
+      - env:
+        - name: LOGGER_LEVEL
+          value: warn
+        - name: NODE_ENV
+          value: production
+        - name: PRE_FETCH
+          value: "false"
+        image: theosun/rsshub:latest
+        imagePullPolicy: ""
+        name: rsshub
+        resources:
+          limits:
+            memory: "314572800"
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

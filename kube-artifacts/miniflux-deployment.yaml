@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out kube-artifacts/
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: miniflux
+  name: miniflux
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: miniflux
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out
+          kube-artifacts/
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: miniflux
+    spec:
+      containers:
+      - env:
+        - name: ADMIN_PASSWORD
+          value: "123456"
+        - name: ADMIN_USERNAME
+          value: admin
+        - name: CLEANUP_ARCHIVE_READ_DAYS
+          value: "15"
+        - name: CLEANUP_ARCHIVE_UNREAD_DAYS
+          value: "30"
+        - name: CREATE_ADMIN
+          value: "1"
+        - name: DATABASE_URL
+          value: postgres://miniflux:secret@pg/miniflux?sslmode=disable
+        - name: HTTP_CLIENT_TIMEOUT
+          value: "60"
+        - name: POLLING_FREQUENCY
+          value: "10"
+        - name: RUN_MIGRATIONS
+          value: "1"
+        image: thedockerimages/miniflux:latest
+        imagePullPolicy: ""
+        name: miniflux
+        ports:
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
