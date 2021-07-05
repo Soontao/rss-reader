@@ -1,0 +1,27 @@
+# manually
+apiVersion: gateway.kyma-project.io/v1alpha1
+kind: APIRule
+metadata:
+  creationTimestamp: null
+  generation: 1
+  name: rss-reader
+  namespace: default
+spec:
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  rules:
+    - accessStrategies:
+        - config: {}
+          handler: allow
+      methods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - HEAD
+      path: /.*
+  service:
+    host: rss-reader
+    name: miniflux # please remember this is 'SERVICE' resource name
+    port: 43241
+status: {}

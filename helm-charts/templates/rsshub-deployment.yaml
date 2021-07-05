@@ -36,6 +36,8 @@ spec:
         image: theosun/rsshub:latest
         imagePullPolicy: ""
         name: rsshub
+        ports:
+        - containerPort: 1200
         resources:
           limits:
             memory: "314572800"
