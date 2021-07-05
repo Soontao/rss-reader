@@ -8,6 +8,8 @@ services:
       NODE_ENV: "production"
       LOGGER_LEVEL: "warn"
       PRE_FETCH: "false"
+    ports: 
+      - '1200:1200'
     deploy:
       resources:
         limits:
