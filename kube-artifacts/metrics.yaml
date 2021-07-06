@@ -1,0 +1,18 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: metrics
+  labels:
+    prometheus: monitoring
+spec:
+  selector:
+    matchLabels:
+      k8s-app: metrics
+  targetLabels:
+    - k8s-app
+  endpoints:
+    - port: web # all service must define web endpoints
+      interval: 10s
+  namespaceSelector:
+    any: true

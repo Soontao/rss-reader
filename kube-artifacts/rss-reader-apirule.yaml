@@ -2,7 +2,6 @@
 apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule
 metadata:
-  creationTimestamp: null
   generation: 1
   name: rss-reader
 spec:

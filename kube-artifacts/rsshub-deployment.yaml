@@ -1,10 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out ./kube-artifacts
-    kompose.version: 1.21.0 (992df58d8)
-  creationTimestamp: null
   labels:
     io.kompose.service: rsshub
   name: rsshub
@@ -17,30 +13,27 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out
-          ./kube-artifacts
         kompose.version: 1.21.0 (992df58d8)
-      creationTimestamp: null
       labels:
         io.kompose.service: rsshub
     spec:
       containers:
-      - env:
-        - name: LOGGER_LEVEL
-          value: warn
-        - name: NODE_ENV
-          value: production
-        - name: PRE_FETCH
-          value: "false"
-        image: theosun/rsshub:latest
-        imagePullPolicy: ""
-        name: rsshub
-        ports:
-        - containerPort: 1200
-        resources:
-          limits:
-            memory: "314572800"
+        - env:
+            - name: LOGGER_LEVEL
+              value: warn
+            - name: NODE_ENV
+              value: production
+            - name: PRE_FETCH
+              value: "false"
+          image: theosun/rsshub:latest
+          imagePullPolicy: IfNotPresent
+          name: rsshub
+          ports:
+            - containerPort: 1200
+          resources:
+            limits:
+              cpu: "0.1"
+              memory: "200M"
       restartPolicy: Always
       serviceAccountName: ""
-      volumes: null
 status: {}
