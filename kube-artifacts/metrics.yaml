@@ -1,3 +1,4 @@
+# not work because it must be defined in namespace 'kyma-system'
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor

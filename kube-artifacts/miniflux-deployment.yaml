@@ -37,6 +37,8 @@ spec:
               value: "1"
             - name: METRICS_COLLECTOR
               value: "1"
+            - name: METRICS_ALLOWED_NETWORKS
+              value: "10.0.0.0/8"
           image: thedockerimages/miniflux:latest
           imagePullPolicy: IfNotPresent
           name: miniflux
