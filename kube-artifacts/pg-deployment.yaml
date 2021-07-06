@@ -1,10 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out ./kube-artifacts
-    kompose.version: 1.21.0 (992df58d8)
-  creationTimestamp: null
   labels:
     io.kompose.service: pg
   name: pg
@@ -16,27 +12,34 @@ spec:
   strategy: {}
   template:
     metadata:
-      annotations:
-        kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out
-          ./kube-artifacts
-        kompose.version: 1.21.0 (992df58d8)
-      creationTimestamp: null
       labels:
         io.kompose.service: pg
     spec:
       containers:
-      - env:
-        - name: POSTGRES_PASSWORD
-          value: secret
-        - name: POSTGRES_USER
-          value: miniflux
-        image: postgres:latest
-        imagePullPolicy: ""
-        name: pg
-        ports:
-        - containerPort: 5432
-        resources: {}
+        - env:
+            - name: POSTGRES_PASSWORD
+              value: secret
+            - name: POSTGRES_USER
+              value: miniflux
+          image: postgres:latest
+          imagePullPolicy: IfNotPresent
+          name: pg
+          ports:
+            - containerPort: 5432
+          resources:
+            limits:
+              cpu: "0.1"
+              memory: "500Mi"
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: pg-pvc
+              # for pg, the mount point can not be a mount point root
+              subPath: pg-data
       restartPolicy: Always
+      volumes:
+        - name: pg-pvc
+          persistentVolumeClaim:
+            claimName: pg-pvc
       serviceAccountName: ""
-      volumes: null
+
 status: {}

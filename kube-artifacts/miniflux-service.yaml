@@ -1,18 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert --out ./kube-artifacts
-    kompose.version: 1.21.0 (992df58d8)
-  creationTimestamp: null
   labels:
     io.kompose.service: miniflux
+    k8s-app: metrics
   name: miniflux
 spec:
   ports:
-  - name: "43241"
-    port: 43241
-    targetPort: 8080
+    - name: web
+      port: 43241
+      targetPort: 8080
   selector:
     io.kompose.service: miniflux
 status:

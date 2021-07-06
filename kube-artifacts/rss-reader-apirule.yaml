@@ -2,10 +2,8 @@
 apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule
 metadata:
-  creationTimestamp: null
   generation: 1
   name: rss-reader
-  namespace: default
 spec:
   gateway: kyma-gateway.kyma-system.svc.cluster.local
   rules:

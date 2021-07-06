@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert -c --out
+    kompose.cmd:
+      C:\Users\I337313\Documents\bin\common\kompose.exe convert -c --out
       ./helm-charts
     kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
@@ -18,7 +19,8 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: C:\Users\I337313\Documents\bin\common\kompose.exe convert -c
+        kompose.cmd:
+          C:\Users\I337313\Documents\bin\common\kompose.exe convert -c
           --out ./helm-charts
         kompose.version: 1.21.0 (992df58d8)
       creationTimestamp: null
@@ -26,18 +28,20 @@ spec:
         io.kompose.service: pg
     spec:
       containers:
-      - env:
-        - name: POSTGRES_PASSWORD
-          value: secret
-        - name: POSTGRES_USER
-          value: miniflux
-        image: postgres:latest
-        imagePullPolicy: ""
-        name: pg
-        ports:
-        - containerPort: 5432
-        resources: {}
+        - env:
+            - name: POSTGRES_PASSWORD
+              value: secret
+            - name: POSTGRES_USER
+              value: miniflux
+          image: postgres:latest
+          imagePullPolicy: ""
+          name: pg
+          ports:
+            - containerPort: 5432
+          resources: {}
       restartPolicy: Always
       serviceAccountName: ""
-      volumes: null
+      volumes:
+        - name: "pg-storage"
+
 status: {}
