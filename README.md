@@ -12,6 +12,7 @@ Minimal RSS Reader, [k8s](https://kubernetes.io/) ready, combine [RSS Hub](https
   - [k8s native artifacts](#k8s-native-artifacts)
     - [manually parts](#manually-parts)
   - [helm artifacts](#helm-artifacts)
+  - [create namespace and use it as default](#create-namespace-and-use-it-as-default)
   - [dns utils](#dns-utils)
 
 ## docker compose
@@ -58,6 +59,13 @@ kubectl delete -f ./kube-artifacts
 
 ```bash
 kompose convert -c --out ./helm-charts
+```
+
+## create namespace and use it as default
+
+```bash
+kubectl create ns rss-reader 
+kubectl config set-context --current --namespace=rss-reader
 ```
 
 ## dns utils
