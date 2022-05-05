@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    io.kompose.service: pg
-  name: pg
+  name: pg-svc
 spec:
   ports:
     - name: "5432"
