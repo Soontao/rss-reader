@@ -12,5 +12,5 @@ spec:
               service:
                 name:  miniflux-svc
                 port:
-                  number: 50031
+                  number: 43241
 
