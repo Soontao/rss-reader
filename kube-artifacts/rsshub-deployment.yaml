@@ -32,7 +32,7 @@ spec:
             - containerPort: 1200
           resources:
             limits:
-              cpu: "0.1"
+              cpu: "100m"
               memory: "200M"
       restartPolicy: Always
       serviceAccountName: ""

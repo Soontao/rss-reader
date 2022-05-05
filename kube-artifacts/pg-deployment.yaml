@@ -28,7 +28,7 @@ spec:
             - containerPort: 5432
           resources:
             limits:
-              cpu: "0.1"
+              cpu: "100m"
               memory: "500Mi"
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
